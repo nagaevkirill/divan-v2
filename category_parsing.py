@@ -23,6 +23,7 @@ def parse_category(cat_name, url, min_discount):
                 product_card = {
                     'id': item['id'],
                     'name': item['name'],
+                    'categoryName': item['categoryName'],
                     'isActive': item['isActive'],
                     'link': f"https://divan.ru{item['link']}",
                     'price': item['price'],
@@ -68,3 +69,4 @@ parse_category('komody-i-tumby', 'https://proxy.divan.ru/p?u=/category/get-produ
 parse_category('stoly-i-stulya', 'https://proxy.divan.ru/p?u=/category/get-products?slug=stoly-i-stulya&isInit=true', 0)
 parse_category('kovry-i-tekstil', 'https://proxy.divan.ru/p?u=/category/get-products?slug=kovry-i-tekstil&isInit=true', 0)
 parse_category('svet', 'https://proxy.divan.ru/p?u=/category/get-products?slug=svet&isInit=true', 0)
+
