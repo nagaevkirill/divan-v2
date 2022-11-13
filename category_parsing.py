@@ -11,6 +11,8 @@ def parse_category(cat_name, url, min_discount):
     total_pages = data_response['pageTotalCount']
     product_dict = []
 
+    print(f'start collect category {cat_name}')
+
     for i in range(1, total_pages+1):
         response = requests.get(url=f'{url}&page={i}')
         data_response = response.json()['data']
@@ -21,6 +23,7 @@ def parse_category(cat_name, url, min_discount):
                 product_card = {
                     'id': item['id'],
                     'name': item['name'],
+                    'isActive': item['isActive'],
                     'link': f"https://divan.ru{item['link']}",
                     'price': item['price'],
                     'image': item['images'][0]['src']
@@ -28,7 +31,8 @@ def parse_category(cat_name, url, min_discount):
 
                 product_dict.append(product_card)
 
-    # print(product_dict)
+    print(f'finish collect category {cat_name}')
+
     with open(f'{ENV.DAILY_PATH}/{cat_name}/{cat_name}_{time.strftime("%H%M%S-%d%m%Y")}.json', 'w', encoding='utf-8') as file:
         json.dump(product_dict, file, indent=4, ensure_ascii=False)
 
@@ -59,3 +63,8 @@ def product_mapping(file_source, file_new):
 
 parse_category('divany-i-kresla', 'https://proxy.divan.ru/p?u=/category/get-products?slug=divany-i-kresla&isInit=true', 0)
 parse_category('krovati-i-matrasy', 'https://proxy.divan.ru/p?u=/category/get-products?slug=krovati-i-matrasy&isInit=true', 0)
+parse_category('skafy-i-stellazi', 'https://proxy.divan.ru/p?u=/category/get-products?slug=skafy-i-stellazi&isInit=true', 0)
+parse_category('komody-i-tumby', 'https://proxy.divan.ru/p?u=/category/get-products?slug=komody-i-tumby&isInit=true', 0)
+parse_category('stoly-i-stulya', 'https://proxy.divan.ru/p?u=/category/get-products?slug=stoly-i-stulya&isInit=true', 0)
+parse_category('kovry-i-tekstil', 'https://proxy.divan.ru/p?u=/category/get-products?slug=kovry-i-tekstil&isInit=true', 0)
+parse_category('svet', 'https://proxy.divan.ru/p?u=/category/get-products?slug=svet&isInit=true', 0)
