@@ -34,7 +34,7 @@ def parse_category(cat_name, url, min_discount):
 
     print(f'finish collect category {cat_name}')
 
-    with open(f'{ENV.DAILY_PATH}/{cat_name}/{cat_name}_{time.strftime("%H%M%S-%d%m%Y")}.json', 'w', encoding='utf-8') as file:
+    with open(f'{ENV.DAILY_PATH}/{time.strftime("%d%m%Y")}_{cat_name}.json', 'w', encoding='utf-8') as file:
         json.dump(product_dict, file, indent=4, ensure_ascii=False)
 
 
