@@ -3,12 +3,24 @@ from aiogram.dispatcher.filters import Text
 from aiogram.utils.markdown import hbold, hlink
 import json
 import ENV
+import tgbot_functions
 
 bot = Bot(token=ENV.API_TOKEN, parse_mode=types.ParseMode.HTML)
 
 dp = Dispatcher(bot)
 back_buttons = ['Назад']
 
+
+@dp.message_handler()
+async def echo(message: types.Message):
+    if message.text.find('/count_divan') != -1 :
+        await message.answer('processing...')
+        date = message.text.replace("/count_divan_", "")
+        await message.reply(tgbot_functions.count_goods('divany-i-kresla', date))
+    if message.text.find('/count_krovati') != -1 :
+        await message.answer('processing...')
+        date = message.text.replace("/count_krovati_", "")
+        await message.reply(tgbot_functions.count_goods('krovati-i-matrasy', date))
 
 @dp.message_handler(commands='start')
 async def start(message: types.Message):
