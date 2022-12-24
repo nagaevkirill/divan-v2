@@ -2,12 +2,16 @@ import json
 import requests
 import time
 import ENV
+import logger
 
 
 def parse_category(cat_name, url, min_discount):
-    response = requests.get(url + '&page=1')
-    data_response = response.json()['data']
+    logger.write(f'start parsing {cat_name}')
 
+    response = requests.get(url + '&page=1')
+    logger.write(f'request GET to {url} + &page=1 return status : {str(response)}')
+
+    data_response = response.json()['data']
     total_pages = data_response['pageTotalCount']
     product_dict = []
 
