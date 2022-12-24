@@ -62,11 +62,11 @@ def product_mapping(file_source, file_new):
             file_log.write(str(diff) + '\n')
 
 
-parse_category('divany-i-kresla', 'https://proxy.divan.ru/p?u=/category/get-products?slug=divany-i-kresla&isInit=true', 0)
-parse_category('krovati-i-matrasy', 'https://proxy.divan.ru/p?u=/category/get-products?slug=krovati-i-matrasy&isInit=true', 0)
-parse_category('skafy-i-stellazi', 'https://proxy.divan.ru/p?u=/category/get-products?slug=skafy-i-stellazi&isInit=true', 0)
-parse_category('komody-i-tumby', 'https://proxy.divan.ru/p?u=/category/get-products?slug=komody-i-tumby&isInit=true', 0)
-parse_category('stoly-i-stulya', 'https://proxy.divan.ru/p?u=/category/get-products?slug=stoly-i-stulya&isInit=true', 0)
-parse_category('kovry-i-tekstil', 'https://proxy.divan.ru/p?u=/category/get-products?slug=kovry-i-tekstil&isInit=true', 0)
-parse_category('svet', 'https://proxy.divan.ru/p?u=/category/get-products?slug=svet&isInit=true', 0)
+parse_category('divany-i-kresla', 'https://proxy.divan.ru/backend/category/get-products?slug=divany-i-kresla&isInit=true', 0)
+parse_category('krovati-i-matrasy', 'https://proxy.divan.ru/backend/category/get-products?slug=krovati-i-matrasy&isInit=true', 0)
+parse_category('skafy-i-stellazi', 'https://proxy.divan.ru/backend/category/get-products?slug=skafy-i-stellazi&isInit=true', 0)
+parse_category('komody-i-tumby', 'https://proxy.divan.ru/backend/category/get-products?slug=komody-i-tumby&isInit=true', 0)
+parse_category('stoly-i-stulya', 'https://proxy.divan.ru/backend/category/get-products?slug=stoly-i-stulya&isInit=true', 0)
+parse_category('kovry-i-tekstil', 'https://proxy.divan.ru/backend/category/get-products?slug=kovry-i-tekstil&isInit=true', 0)
+parse_category('svet', 'https://proxy.divan.ru/backend/category/get-products?slug=svet&isInit=true', 0)
 
